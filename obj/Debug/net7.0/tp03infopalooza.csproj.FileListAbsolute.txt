@@ -1,0 +1,15 @@
+Z:\Programacion4\tp03infopalooza\obj\Debug\net7.0\tp03infopalooza.csproj.AssemblyReference.cache
+Z:\Programacion4\tp03infopalooza\obj\Debug\net7.0\tp03infopalooza.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Programacion4\tp03infopalooza\obj\Debug\net7.0\tp03infopalooza.AssemblyInfoInputs.cache
+Z:\Programacion4\tp03infopalooza\obj\Debug\net7.0\tp03infopalooza.AssemblyInfo.cs
+Z:\Programacion4\tp03infopalooza\obj\Debug\net7.0\tp03infopalooza.csproj.CoreCompileInputs.cache
+Z:\Programacion4\tp03infopalooza\bin\Debug\net7.0\tp03infopalooza.exe
+Z:\Programacion4\tp03infopalooza\bin\Debug\net7.0\tp03infopalooza.deps.json
+Z:\Programacion4\tp03infopalooza\bin\Debug\net7.0\tp03infopalooza.runtimeconfig.json
+Z:\Programacion4\tp03infopalooza\bin\Debug\net7.0\tp03infopalooza.dll
+Z:\Programacion4\tp03infopalooza\bin\Debug\net7.0\tp03infopalooza.pdb
+Z:\Programacion4\tp03infopalooza\obj\Debug\net7.0\tp03infopalooza.dll
+Z:\Programacion4\tp03infopalooza\obj\Debug\net7.0\refint\tp03infopalooza.dll
+Z:\Programacion4\tp03infopalooza\obj\Debug\net7.0\tp03infopalooza.pdb
+Z:\Programacion4\tp03infopalooza\obj\Debug\net7.0\tp03infopalooza.genruntimeconfig.cache
+Z:\Programacion4\tp03infopalooza\obj\Debug\net7.0\ref\tp03infopalooza.dll

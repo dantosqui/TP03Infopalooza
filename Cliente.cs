@@ -1,4 +1,4 @@
-Class Cliente {
+class Cliente {
 
 
 
@@ -14,9 +14,8 @@ public Cliente (string _dni, string _apellido, string _nombre, DateTime _fechain
     Apellido=_apellido;
     Nombre=_nombre;
     FechaInscripcion=_fechainscripcion;
-    TipoEntrada=_TipoEntrada
+    TipoEntrada=_TipoEntrada;
     TotalAbonado=_totalabonado;
 }
-
-//añadir metodo cambiarentrada
 }
+//añadir metodo cambiarentrada
