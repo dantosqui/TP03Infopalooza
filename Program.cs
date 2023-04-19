@@ -1,5 +1,5 @@
 ﻿
-
+Dictionary<int, Cliente> clientes = new Dictionary<int, Cliente>();
 bool chau = true;
 
 while (chau) {
@@ -8,7 +8,8 @@ while (chau) {
     string r=Console.ReadLine();
     switch(r){
         case ("1"):
-            
+        
+        NuevaInscripcion(ref clientes);
         break;
         case ("2"):
             
@@ -32,9 +33,9 @@ while (chau) {
 }
 
 
-Cliente NuevaInscripcion(ref int id){
+void NuevaInscripcion(ref Dictionary<int,Cliente> c){
 
-    bool v=false;int te=0; double va=0; string dni, apellido, nombre; DateTime fecha=DateTime.Now;
+    bool v=false;int te=0; double va=0; string dni, apellido, nombre; DateTime fecha=DateTime.Now; int id;
 
     dni=IngresarString("Ingrese su DNI: ");
     apellido=IngresarString("Ingrese Apellido: ");
@@ -45,7 +46,7 @@ Cliente NuevaInscripcion(ref int id){
         case 1: va=15000; break;case 2: va=30000; break;case 3: va=10000; break;case 4: va=40000; break;
         }
     id=Tiquetera.DevolverUltimoId();
-    return new Cliente(dni,apellido,nombre, fecha, te,va);
+    c.Add(id,new Cliente(dni,apellido,nombre, fecha, te,va));
 }
 
 string IngresarString(string prompt) {
