@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Programacion4\\tp03infopalooza\\tp03infopalooza.csproj": {}
+    "C:\\Users\\Dante\\Downloads\\tp03infopalooza\\TP03Infopalooza\\tp03infopalooza.csproj": {}
   },
   "projects": {
-    "Z:\\Programacion4\\tp03infopalooza\\tp03infopalooza.csproj": {
+    "C:\\Users\\Dante\\Downloads\\tp03infopalooza\\TP03Infopalooza\\tp03infopalooza.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Programacion4\\tp03infopalooza\\tp03infopalooza.csproj",
+        "projectUniqueName": "C:\\Users\\Dante\\Downloads\\tp03infopalooza\\TP03Infopalooza\\tp03infopalooza.csproj",
         "projectName": "tp03infopalooza",
-        "projectPath": "Z:\\Programacion4\\tp03infopalooza\\tp03infopalooza.csproj",
-        "packagesPath": "C:\\Users\\47573312\\.nuget\\packages\\",
-        "outputPath": "Z:\\Programacion4\\tp03infopalooza\\obj\\",
+        "projectPath": "C:\\Users\\Dante\\Downloads\\tp03infopalooza\\TP03Infopalooza\\tp03infopalooza.csproj",
+        "packagesPath": "C:\\Users\\Dante\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dante\\Downloads\\tp03infopalooza\\TP03Infopalooza\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\47573312\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Dante\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
