@@ -16,7 +16,7 @@ while (chau)
             break;
         case ("3"):
             Cliente c = BuscarCLiente(clientes);
-            if (c != null) { Console.WriteLine($"Apellido:{c.Apellido} Nombre:{c.Nombre} Fecha:{c.FechaInscripcion.ToShortDateString} Tipo de entrada:{c.TipoEntrada} Total abonado: {c.TotalAbonado}"); }
+            if (c != null) { Console.WriteLine($"Apellido:{c.Apellido} Nombre:{c.Nombre} Fecha:{c.FechaInscripcion.ToShortDateString()} Tipo de entrada:{c.TipoEntrada} Total abonado: {c.TotalAbonado}"); }
             break;
         case ("4"):
             Cliente c2 = BuscarCLiente(clientes);
@@ -129,7 +129,7 @@ double IngresarTipoEntrada(ref int tipo)
 {
 
     bool v = true; int te = 0; double precio = 0, va = 0;
-    while (v) { te = IngresarInt("Ingrese el tipo de Entrada. \nDia 1:$15000 Dia 2:$30000 Dia 3:$10000 Full Pass (4):$40000 :"); v = te < 1 && te > 4; };
+    while (v) { te = IngresarInt("Ingrese el tipo de Entrada. \nDia 1:$15000 Dia 2:$30000 Dia 3:$10000 Full Pass (4):$40000 :"); v = te < 1 || te > 4; };
     precio = Cliente.valoresEntradas[te - 1];
     do { va = IngresarDouble("Total: $" + precio + ". Ingrese total a abonar:"); } while (va < precio);
     if (va > precio) { Console.WriteLine("Su vuelto es: " + (va - precio)); }
