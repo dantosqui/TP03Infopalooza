@@ -1,5 +1,4 @@
-﻿//todo:cambiar colores porque dice el enunciado
-Dictionary<int, Cliente> clientes = new Dictionary<int, Cliente>();
+﻿Dictionary<int, Cliente> clientes = new Dictionary<int, Cliente>();
 bool chau = true;
 
 while (chau)
@@ -21,7 +20,9 @@ while (chau)
             break;
         case ("4"):
             Cliente c2 = BuscarCLiente(clientes);
-            if (c2 != null) { CambiarEntrada(ref c2); }
+            if (c2 != null) { 
+                int nte=0; double pr; pr = IngresarTipoEntrada(ref nte);
+                bool p = c2.CambiarEntrada(nte,pr); }
             break;
         case ("5"):
             chau = false;
@@ -45,16 +46,7 @@ void NuevaInscripcion(ref Dictionary<int, Cliente> c)
     apellido = IngresarString("Ingrese Apellido: ");
     nombre = IngresarString("Ingrese Nombre: ");
     while (!v) { v = DateTime.TryParse(IngresarString("Ingrese la fecha de inscripcion(AAAA/MM/DD): "), out fecha); }
-    v = true; while (v) { te = IngresarInt("Ingrese el nuevo tipo de Entrada. \nDia 1:$15000 Dia 2:$30000 Dia 3:$10000 Full Pass (4):$40000 :"); v = te < 1 && te > 4; };
-    switch (te)
-    {
-        case 1: precio = 15000; break;
-        case 2: precio = 30000; break;
-        case 3: precio = 10000; break;
-        case 4: precio = 40000; break;
-    }
-    do { va = IngresarDouble("Total: $" + precio + ". Ingrese total a abonar:"); } while (va < precio);
-    if (va > precio) { Console.WriteLine("Su vuelto es: " + (va - precio)); }
+    va=IngresarTipoEntrada(ref te);
     id = Tiquetera.DevolverUltimoId();
     c.Add(id, new Cliente(dni, apellido, nombre, fecha, te, precio));
 }
@@ -106,22 +98,6 @@ Cliente BuscarCLiente(Dictionary<int, Cliente> c)
 
 }
 
-void CambiarEntrada(ref Cliente c)
-{
-    double precio = 0; int te = 0; bool v = true; double va; DateTime fecha=DateTime.Now;
-    while (!v) { v = DateTime.TryParse(IngresarString("Ingrese la fecha de inscripcion(AAAA/MM/DD): "), out fecha); }
-    v=true;while (v) { te = IngresarInt("Ingrese el Tipo de Entrada. \nDia 1:$15000 Dia 2:$30000 Dia 3:$10000 Full Pass (4):$40000 :"); v = te < 1 && te > 4 && te==c.TipoEntrada; };
-    switch (te)
-    {
-        case 1: precio = 15000; break;
-        case 2: precio = 30000; break;
-        case 3: precio = 10000; break;
-        case 4: precio = 40000; break;
-    }
-    do { va = IngresarDouble("Total: $" + precio + ". Ingrese total a abonar:"); } while (va < precio);
-    c.TipoEntrada=te;c.TotalAbonado=va+c.TotalAbonado;c.FechaInscripcion=fecha;
-}
-
 #region funcionesingresar
 string IngresarString(string prompt)
 {
@@ -137,11 +113,23 @@ int IngresarInt(string prompt)
     while (!b) { b = int.TryParse(Console.ReadLine(), out r); };
     return r;
 }
+
 double IngresarDouble(string prompt)
 {
     Console.Write(prompt);
     double r = 18.122022; bool b = false;
     while (!b) { b = double.TryParse(Console.ReadLine(), out r); };
     return r;
+}
+
+double IngresarTipoEntrada(ref int tipo) {
+
+bool v=true; int te=0; double precio=0, va=0;
+while (v) { te = IngresarInt("Ingrese el tipo de Entrada. \nDia 1:$15000 Dia 2:$30000 Dia 3:$10000 Full Pass (4):$40000 :"); v = te < 1 && te > 4; };
+    precio=Cliente.valoresEntradas[te-1];
+    do { va = IngresarDouble("Total: $" + precio + ". Ingrese total a abonar:"); } while (va < precio);
+    if (va > precio) { Console.WriteLine("Su vuelto es: " + (va - precio)); }
+
+tipo=te;return va;
 }
 #endregion
