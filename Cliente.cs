@@ -25,7 +25,7 @@ class Cliente
     public bool CambiarEntrada(int tipo, double plata)
     {
 
-        double valorEntrada;
+
         bool ret = valoresEntradas[tipo - 1] > valoresEntradas[this.TipoEntrada];
         if (ret)
         { this.TipoEntrada = tipo; this.TotalAbonado += valoresEntradas[tipo - 1]; }

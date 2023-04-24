@@ -20,9 +20,12 @@ while (chau)
             break;
         case ("4"):
             Cliente c2 = BuscarCLiente(clientes);
-            if (c2 != null) { 
-                int nte=0; double pr; pr = IngresarTipoEntrada(ref nte);
-                bool p = c2.CambiarEntrada(nte,pr); }
+            if (c2 != null)
+            {
+                int nte = 0; double pr; pr = IngresarTipoEntrada(ref nte);
+                bool p = false; p = c2.CambiarEntrada(nte, pr);
+                if (!p) Console.WriteLine("No se pudo cambiar la entrada. El precio debe ser mayor al anterior abonado");
+            }
             break;
         case ("5"):
             chau = false;
@@ -46,7 +49,7 @@ void NuevaInscripcion(ref Dictionary<int, Cliente> c)
     apellido = IngresarString("Ingrese Apellido: ");
     nombre = IngresarString("Ingrese Nombre: ");
     while (!v) { v = DateTime.TryParse(IngresarString("Ingrese la fecha de inscripcion(AAAA/MM/DD): "), out fecha); }
-    va=IngresarTipoEntrada(ref te);
+    va = IngresarTipoEntrada(ref te);
     id = Tiquetera.DevolverUltimoId();
     c.Add(id, new Cliente(dni, apellido, nombre, fecha, te, precio));
 }
@@ -122,14 +125,15 @@ double IngresarDouble(string prompt)
     return r;
 }
 
-double IngresarTipoEntrada(ref int tipo) {
+double IngresarTipoEntrada(ref int tipo)
+{
 
-bool v=true; int te=0; double precio=0, va=0;
-while (v) { te = IngresarInt("Ingrese el tipo de Entrada. \nDia 1:$15000 Dia 2:$30000 Dia 3:$10000 Full Pass (4):$40000 :"); v = te < 1 && te > 4; };
-    precio=Cliente.valoresEntradas[te-1];
+    bool v = true; int te = 0; double precio = 0, va = 0;
+    while (v) { te = IngresarInt("Ingrese el tipo de Entrada. \nDia 1:$15000 Dia 2:$30000 Dia 3:$10000 Full Pass (4):$40000 :"); v = te < 1 && te > 4; };
+    precio = Cliente.valoresEntradas[te - 1];
     do { va = IngresarDouble("Total: $" + precio + ". Ingrese total a abonar:"); } while (va < precio);
     if (va > precio) { Console.WriteLine("Su vuelto es: " + (va - precio)); }
 
-tipo=te;return va;
+    tipo = te; return va;
 }
 #endregion
